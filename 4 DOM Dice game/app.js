@@ -30,4 +30,28 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
     var diceDOM=document.querySelector('.dice');
     diceDOM.style.display='block';//this will display the hidden image
     diceDOM.src='dice-'+dice+'.png';//this will update the src tag of the dice image
+    
+    //3.update the score to 0 if rolled number is 1
+    if(dice!==1){
+        roundScore+=dice;
+        document.getElementById('current-'+activePlayer).textContent=roundScore;
+    }
+    else{
+        roundScore=0;
+        //next player
+        activePlayer==0?activePlayer=1:activePlayer=0;
+        document.getElementById('current-0').textContent=0;
+        document.getElementById('current-1').textContent=0;
+        document.querySelector('.dice').style.display='none';
+        
+        //toggling which player is active, if one class is active, 
+        //the active class is removed and if class is not active it willadd active
+        document.querySelector('.player-0-panel').classList.toggle('active');
+        document.querySelector('.player-1-panel').classList.toggle('active');
+        
+        //we cam also ass aclass or remove class as below
+        //document.querySelector('.player-0-panel').classList.add('active');
+        //document.querySelector('.player-0-panel').classList.remove('active');
+    }
+    
 });
