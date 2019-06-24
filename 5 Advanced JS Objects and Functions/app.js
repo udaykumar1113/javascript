@@ -18,7 +18,7 @@ john.calcAge();
 max.calcAge();*/
 
 //Object.create
-var personProto={
+/*var personProto={
     calcAge:function(){
         console.log(2019-this.birthYear);
     }
@@ -37,10 +37,33 @@ var john=Object.create(personProto,
 });
 
 jonas.calcAge();
-john.calcAge();
+john.calcAge();*/
+
+//primtives vs datatypes
+
+//changing objects
+var obj1={
+    name:'Jonas',
+    age:30
+};
 
 
+var obj2=obj1;
+obj1.name='John';
 
+console.log(obj1);
+console.log(obj2);
+
+//changing variablles
+var a,b;
+a=10,b=20;
+
+function changeVal(num_1,num_2){
+    num_2=num_1;
+}
+
+changeVal(a,b);
+console.log(a+' '+b);
 
 
 
