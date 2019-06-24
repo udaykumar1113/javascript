@@ -66,7 +66,7 @@ function changeVal(num_1,num_2){
 changeVal(a,b);
 console.log(a+' '+b);*/
 
-//First class functions passing functions as arguments
+/*First class functions passing functions as arguments
 
 var years = [1990,1985, 2010, 1960, 2000];
 
@@ -87,8 +87,37 @@ function legalAge(birthYear){
 }
 
 console.log(arrayCalc(years, calcAge));
-console.log(arrayCalc(years, legalAge));
+console.log(arrayCalc(years, legalAge));*/
 
+//Functions returning functions
+function interviewQuestion(job){
+	if(job==='designer'){
+		return function(name){
+			console.log(name+' what is a UX design mean?');
+		}
+	}
+	else if(job==='teacher'){
+		return function(name){
+			console.log('What subject do you teach '+name);
+		}
+	}
+	else{
+		return function (name) {
+			console.log('Hello '+name+' what do you do');
+        
+	}
+}
+}
+
+//First way of function call
+var designInterview = interviewQuestion('designer');
+designInterview('John');
+var teacherInterview = interviewQuestion('teacher');
+teacherInterview('Jonas');
+
+//Second way of function call
+interviewQuestion('designer')('Jonas');
+interviewQuestion('teacher')('John');
 
 
 
