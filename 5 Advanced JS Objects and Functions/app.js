@@ -39,6 +39,7 @@ var john=Object.create(personProto,
 jonas.calcAge();
 john.calcAge();*/
 
+/*
 //primtives vs datatypes
 
 //changing objects
@@ -63,8 +64,30 @@ function changeVal(num_1,num_2){
 }
 
 changeVal(a,b);
-console.log(a+' '+b);
+console.log(a+' '+b);*/
 
+//First class functions passing functions as arguments
+
+var years = [1990,1985, 2010, 1960, 2000];
+
+function arrayCalc(arr, fn){
+    var arrResult=[];
+    for(var i=0; i<arr.length;  i++){
+        arrResult.push(fn(years[i]));
+    }
+    return arrResult;
+}
+
+function calcAge(age){
+    return 2019-age;
+}
+
+function legalAge(birthYear){
+    return 2019-birthYear>=18?true:false;
+}
+
+console.log(arrayCalc(years, calcAge));
+console.log(arrayCalc(years, legalAge));
 
 
 
