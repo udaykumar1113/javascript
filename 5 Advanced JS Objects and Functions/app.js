@@ -119,7 +119,7 @@ teacherInterview('Jonas');
 interviewQuestion('designer')('Jonas');
 interviewQuestion('teacher')('John');*/
 
-//IIFE without parameters
+/*IIFE without parameters
 (function(){
 		var rand_num=Math.random()*10;
 		console.log(rand_num>=5?true:false);
@@ -130,7 +130,24 @@ interviewQuestion('teacher')('John');*/
         var rand_num = (Math.random() * 10)+3;
         console.log(rand_num >= 5 ? true : false);
     
-})(3);
+})(3);*/
+
+//Closures
+function retirement(retirementAge){
+	var msg = ' Years left untill retirement';
+	return function(yearOfBirth){
+		console.log((retirementAge-yearOfBirth)+' '+msg);
+	}
+}
+
+var usRetirement=retirement(68);
+usRetirement(28);
+
+var ukRetirementAge=retirement(65);
+ukRetirementAge(28);
+
+var ausRetirementAge=retirement(66);
+ausRetirementAge(28);
 
 
 
