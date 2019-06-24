@@ -89,7 +89,7 @@ function legalAge(birthYear){
 console.log(arrayCalc(years, calcAge));
 console.log(arrayCalc(years, legalAge));*/
 
-//Functions returning functions
+/*Functions returning functions
 function interviewQuestion(job){
 	if(job==='designer'){
 		return function(name){
@@ -117,7 +117,21 @@ teacherInterview('Jonas');
 
 //Second way of function call
 interviewQuestion('designer')('Jonas');
-interviewQuestion('teacher')('John');
+interviewQuestion('teacher')('John');*/
+
+//IIFE without parameters
+(function(){
+		var rand_num=Math.random()*10;
+		console.log(rand_num>=5?true:false);
+})();
+
+//IIFE with parameter
+(function(goodluck) {
+        var rand_num = (Math.random() * 10)+3;
+        console.log(rand_num >= 5 ? true : false);
+    
+})(3);
+
 
 
 
