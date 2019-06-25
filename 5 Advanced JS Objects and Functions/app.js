@@ -174,7 +174,14 @@ john.presentation('formal', 'morning');
 
 john.presentation.call(emily, 'friendly', 'afternoon');
 
-//john.presentation.apply(emily, ['friendly', 'afternoon']);
+//john.presentation.apply(emily, ['friendly', 'afternoon']);*/
+
+var johnFriendly=john.presentation.bind(john, 'friendly');
+johnFriendly('evening');
+
+var emilyFormal=john.presentation.bind(emily, 'formal');
+emilyFormal('morning');
+
 
 
 
