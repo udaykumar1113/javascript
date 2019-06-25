@@ -132,7 +132,7 @@ interviewQuestion('teacher')('John');*/
     
 })(3);*/
 
-//Closures
+/*Closures
 function retirement(retirementAge){
 	var msg = ' Years left untill retirement';
 	return function(yearOfBirth){
@@ -147,7 +147,35 @@ var ukRetirementAge=retirement(65);
 ukRetirementAge(28);
 
 var ausRetirementAge=retirement(66);
-ausRetirementAge(28);
+ausRetirementAge(28);*/
+
+//Call()
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'teacher',
+    presentation: function(style, timeOfDay) {
+        if (style === 'formal') {
+            console.log('Good ' + timeOfDay + ', Ladies and gentlemen! I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old.');
+        } else if (style === 'friendly') {
+            console.log('Hey! What\'s up? I\'m ' +  this.name + ', I\'m a ' + this.job + ' and I\'m ' + this.age + ' years old. Have a nice ' + timeOfDay + '.');
+        }
+    }
+};
+
+var emily = {
+    name: 'Emily',
+    age: 35,
+    job: 'designer'
+};
+
+john.presentation('formal', 'morning');
+
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+//john.presentation.apply(emily, ['friendly', 'afternoon']);
+
 
 
 
