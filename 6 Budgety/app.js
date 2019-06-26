@@ -12,4 +12,22 @@ var budgetController=(function(){
     
 })();
 
-console.log(budgetController.publicAdd(10));
+var UIController=(function(){
+   //UI related code 
+})();
+
+var controller=(function(budgetCtrl, UICtrl){
+    
+    var sum=budgetCtrl.publicAdd(20);
+    
+    
+    return{
+        anotherPublicAdd:function(){
+            console.log(sum);
+        }
+    }
+    
+})(budgetController,UIController);
+
+console.log(budgetController.publicAdd(15));
+controller.anotherPublicAdd(20);
