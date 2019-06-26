@@ -1,33 +1,20 @@
 var budgetController=(function(){
-    var x=23;
-    var add=function(a){
-        return x+a;
-    }
-    
-    return {
-       publicAdd:function(b){
-           return add(b);
-       } 
-    }
-    
+
+    //some code
 })();
 
 var UIController=(function(){
-   //UI related code 
+    //UI related code
 })();
 
 var controller=(function(budgetCtrl, UICtrl){
-    
-    var sum=budgetCtrl.publicAdd(20);
-    
-    
-    return{
-        anotherPublicAdd:function(){
-            console.log(sum);
-        }
-    }
-    
-})(budgetController,UIController);
 
-console.log(budgetController.publicAdd(15));
-controller.anotherPublicAdd(20);
+    
+  var ctrlAddItem=function(){
+      console.log('Event listener works....')
+  }    
+ document.querySelector('.add__btn').addEventListener('click',ctrlAddItem);
+    
+document.addEventListener('keypress', ctrlAddItem);
+
+})(budgetController,UIController);
