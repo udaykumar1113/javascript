@@ -1,6 +1,30 @@
 var budgetController=(function(){
 
-    //some code
+    //Modelling Income object
+    var Income = function(id, description, value){
+        this.id=id;
+        this.description=description,
+        this.value=value
+    };
+    
+    //Modelling Expense object
+    var Expense = function(id,description, value){
+        this.id=id,
+        this.description=description,
+        this.value=value 
+    };
+    
+    var data = {
+        allItems:{
+            exp:[],
+            inc:[]    
+        },
+        totals:{
+            exp:0,
+            inc:0
+        }
+    };
+    
 })();
 
 var UIController=(function(){
@@ -53,5 +77,5 @@ var controller=(function(budgetCtrl, UICtrl){
   }
 
 })(budgetController,UIController);
-
+income_expense_function
 controller.init();
