@@ -27,15 +27,31 @@ var UIController=(function(){
     };    
 })();
 
+//Global App controller
 var controller=(function(budgetCtrl, UICtrl){
 
+  var setupEventListener=function(){
+      document.querySelector(DOMStrings.inputBtn).addEventListener('click',ctrlAddItem);
+      
+      document.addEventListener('keypress', function(event){
+         if(event.keyCode===13 || event.which===13){
+             ctrlAddItem();
+         } 
+      });
+  }    
     
   var DOMStrings=UICtrl.getDOMStrings();
     
   var ctrlAddItem=function(){
       console.log(UICtrl.getInput());
-  }  
+  };  
   
-  document.querySelector(DOMStrings.inputBtn).addEventListener('click',ctrlAddItem);
+  return{
+      init: function(){
+          setupEventListener();
+      }
+  }
 
 })(budgetController,UIController);
+
+controller.init();
