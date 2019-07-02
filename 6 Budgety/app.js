@@ -109,6 +109,24 @@ var UIController=(function(){
             
         },
         
+        clearFields:function(){
+            var fields, fieldsArr;
+            
+            //This returns a list which needs to be converted to Array
+            fields = document.querySelectorAll(DOMStrings.inputType+', '+DOMStrings.inputDescription+', '+DOMStrings.inputValue);
+            
+            //Alternate to convert list to array Array.prototype.slice.call(fields);
+            fieldsArr = Array.from(fields);
+            
+            //iterating over each input and clearing fieds
+            fieldsArr.forEach(function(current, index, array){
+                current.value="";
+                
+            });
+            
+            fieldsArr[0].focus();
+        },
+        
         getDOMStrings:function(){
             return DOMStrings;
         }
@@ -142,6 +160,10 @@ var controller=(function(budgetCtrl, UICtrl){
       
       //3.Add the item to UI
       UICtrl.addListItem(newItem, input.type);
+      
+      //4.Clear input fields
+      UICtrl.clearFields();
+      
       
   }
   
