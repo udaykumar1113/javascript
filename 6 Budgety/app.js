@@ -78,7 +78,7 @@ var UIController=(function(){
             return{
                 type: document.querySelector(DOMStrings.inputType).value,
                 description: document.querySelector(DOMStrings.inputDescription).value,
-                value: document.querySelector(DOMStrings.inputValue).value
+                value: parseFloat(document.querySelector(DOMStrings.inputValue).value)
             };
         },
         
@@ -124,6 +124,7 @@ var UIController=(function(){
                 
             });
             
+            //This will set the focus to first element in array
             fieldsArr[0].focus();
         },
         
@@ -148,24 +149,37 @@ var controller=(function(budgetCtrl, UICtrl){
     
   var DOMStrings=UICtrl.getDOMStrings();
     
+  var updateBudget=function(){
+      
+      //1.Calculate the budget
+      
+      //2.Return the budget
+      
+      //3.Display budget on UI
+  }
+    
   var ctrlAddItem=function(){
             
       //1.Get input
       var input=UICtrl.getInput();
       
-      //2.Add item to budget controller
-      var newItem=budgetCtrl.addItem(input.type, input.description, input.value);
+      if(input.description!='' && !isNaN(input.value) && input.value>0){
+          
+            //2.Add item to budget controller
+            var newItem=budgetCtrl.addItem(input.type, input.description, input.value);
       
-      console.log(newItem);
+            //3.Add the item to UI
+            UICtrl.addListItem(newItem, input.type);
       
-      //3.Add the item to UI
-      UICtrl.addListItem(newItem, input.type);
+            //4.Clear input fields
+            UICtrl.clearFields();
       
-      //4.Clear input fields
-      UICtrl.clearFields();
-      
+            //5.updating budget
+            updateBudget();
+      }
       
   }
+
   
   return{
       init: function(){
