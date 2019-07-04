@@ -109,7 +109,7 @@ var UIController=(function(){
         budgetLabel:'.budget__value',
         incomeLabel:'.budget__income--value',
         expensesLabel:'.budget__expenses--value',
-        percentageLabel:'.budget__income--value'
+        percentageLabel:'.budget__income--percentage'
     }
     
     return{
