@@ -7,7 +7,7 @@ console.log(name5);
 // ES6
 const name6 = 'Jane Smith';
 let age6 = 23;
-name6 = 'Jane Miller';
+//name6 = 'Jane Miller';
 console.log(name6);
 
 
@@ -52,3 +52,22 @@ for (var i = 0; i < 5; i++) {
 }
 
 console.log(i);
+
+//IIFE Blocks
+// ES6
+{
+    const a = 1;
+    let b = 2;
+    var c = 3;
+}
+
+//console.log(a + b); gives an error
+console.log(c);
+
+
+// ES5
+(function() {
+    var c = 3;
+})();
+
+console.log(c);
