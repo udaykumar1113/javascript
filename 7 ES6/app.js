@@ -93,3 +93,26 @@ console.log(n.startsWith('j'));
 console.log(n.endsWith('Sm'));
 console.log(n.includes('oh'));
 console.log(`${firstName} `.repeat(5));
+
+const years = [1920,1989,1965,1978,1993];
+//ES5
+
+var ES5Ages=years.map(function(el){
+    return 2019-el;
+})
+
+console.log(ES5Ages.toString());
+
+//ES6
+//Arrow functions 
+let ES6Ages=years.map(el=>2019-el);
+console.log(ES6Ages.toString());
+
+ES6Ages=years.map((el, index) => `Age element ${index + 1}: ${2016 - el}.`);
+console.log(ES6Ages);
+
+ES6Ages=years.map((el,index)=>{
+    let currentYear=new Date().getFullYear();
+    return `Age element ${index+1} is ${currentYear-el}`;
+});
+console.log(ES6Ages);
