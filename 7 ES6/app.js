@@ -215,6 +215,8 @@ const {firstName: a, lastName: b} = obj;
 console.log(a);
 console.log(b);
 
+//ES6 Arrays
+
 
 
 function calcAgeRetirement(year) {
