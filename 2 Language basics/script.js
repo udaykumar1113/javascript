@@ -1,8 +1,19 @@
-var firstName='Jon';
-var lastName='Doe'
-console.log(firstName+' '+lastName);
-var age=30;
-var legalAge=true;
-console.log(legalAge);
-var defination;
-console.log(defination);
+/*Type mutation and variable coercio*/
+var firstName = 'John';
+var age = 28;
+
+// Type coercion
+console.log(firstName + ' ' + age);
+var job, isMarried;
+job = 'teacher';
+isMarried = false;
+console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+
+// Variable mutation
+age = 'twenty eight';
+job = 'driver';
+alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+var lastName = prompt('What is his last Name?');
+console.log(firstName + ' ' + lastName);
+
+console.log(typeof lastName);
